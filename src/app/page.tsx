@@ -1,3 +1,5 @@
+import Header from "@/components/Header/Header";
+
 export default function HomePage() {
-  return <h1>👋 Привет из Roboschool!</h1>;
+  return <Header />;
 }
