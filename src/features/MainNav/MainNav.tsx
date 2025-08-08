@@ -1,3 +1,5 @@
+"use client";
+
 import headerLinks from "@/data/nav";
 import styles from "./MainNav.module.sass";
 import Link from "next/link";

@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { Jost } from "next/font/google";
 import type { Metadata } from "next";
+import { Providers } from "./providers";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -19,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
-      <body className={jost.className}>{children}</body>
+    <html lang="ru" className={jost.variable}>
+      <body className={jost.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
