@@ -1,3 +1,4 @@
+
 .hero
   background: rgba(20, 16, 36, 1)
   display: flex
@@ -47,13 +48,59 @@
   line-height: 160%
   text-align: center
 
+.imageWrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  max-width: 783px
+  height: auto
+  overflow: hidden
+  border-radius: 10px
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3)
+
+.heroImage
+  width: 100%
+  height: auto
+  object-fit: cover
+  border-radius: 10px
+
 @media (max-width: 768px)
   .container
     flex-direction: column
     gap: 20px
-    padding: 0 10px
+
+  .title
+    width: 100%
+    font-size: 30px
+    text-align: center
+
+  .text
+    font-size: 16px
+    text-align: center
+
+  .btn
+    width: 100%
+    max-width: 260px
+
+  .imageWrapper
+    max-width: 100%
+    height: auto
 
 @media (max-width: 480px)
   .container
     gap: 15px
-    padding: 0 5px
+    padding: 0 10px
+
+  .title
+    font-size: 24px
+
+  .text
+    font-size: 14px
+
+  .btn
+    position: absolute
+    font-size: 16px
+    bottom: 20px
+    right: 55px
+    font-size: 16px

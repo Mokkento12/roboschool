@@ -13,12 +13,15 @@ const Hero = () => {
           </p>
           <button className={styles.btn}>Записаться на курс</button>
         </div>
-        <Image
-          src={"/image/hero-img.png"}
-          width={783}
-          height={918}
-          alt="Hero Image"
-        />
+        <div className={styles.imageWrapper}>
+          <Image
+            src={"/image/hero-img.png"}
+            width={783}
+            height={918}
+            alt="Hero Image"
+            className={styles.heroImage}
+          />
+        </div>
       </div>
     </div>
   );
