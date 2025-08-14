@@ -1,3 +1,4 @@
+import Desc from "@/components/Desc/Desc";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 
@@ -6,6 +7,7 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
+      <Desc />
     </>
   );
 }
