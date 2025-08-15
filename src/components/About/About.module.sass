@@ -1,4 +1,4 @@
-.desc
+.about
   display: flex
   align-items: center
   justify-content: center
@@ -35,10 +35,39 @@
   line-height: 160%
   text-align: left
 
-.txt
+.desc
   color: rgba(20, 16, 36, 0.7)
   font-family: Jost
   font-size: 18px
   font-weight: 400
   line-height: 160%
   text-align: left
+
+@media (max-width: 768px)
+
+.about
+  padding: 3.75rem .625rem
+
+.container
+  gap: 40px
+
+.text
+  min-width: 300px
+  font-size: 20px
+  text-align: center
+
+.indicators
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.indicator
+  align-items: center
+
+.number
+  font-size: 60px
+
+.desc
+  font-size: 16px
+  text-align: center

@@ -1,4 +1,4 @@
-import Desc from "@/components/Desc/Desc";
+import About from "@/components/About/About";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 
@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
-      <Desc />
+      <About />
     </>
   );
 }
