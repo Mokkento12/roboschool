@@ -74,7 +74,7 @@
   bottom: 150%
   left: 50%
   transform: translateX(-5%)
-  padding: 8px 12px
+  padding: 15px
   color: rgba(20, 16, 36, 1)
   font-family: Jost
   font-size: 16px
@@ -94,3 +94,30 @@
 .infoButton:hover .tooltip
   opacity: 1
   visibility: visible
+
+@media (max-width: 768px)
+  .benefits
+    padding: 40px 10px
+    flex-direction: column
+
+  .title
+    margin: 0
+    font-size: 30px
+    text-align: center
+
+  .items
+    align-items: center
+    flex-direction: column
+
+  .benefit
+    width: 300px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+  .benefitTitle
+    font-size: 20px
+
+  .tooltip
+    transform: translateX(-80%)
