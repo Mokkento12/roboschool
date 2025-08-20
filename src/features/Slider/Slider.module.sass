@@ -1,44 +1,79 @@
+// components/Trainers/Slider/Slider.module.sass
 
 .slider
   width: 100%
   display: flex
   align-items: center
   justify-content: center
+  flex-direction: column
   overflow: hidden
 
 .sliderWrapper
   display: flex
   align-items: center
-  gap: 40px
+  overflow-x: hidden // Скрываем слайды вне области видимости
+  margin-bottom: 60px
+  width: 100% // Занимает всю ширину родителя
+
+.slideContainer
+  display: flex
+  transition: transform 0.5s ease-in-out // Плавная анимация сдвига
+  will-change: transform // Оптимизация для анимации
+
+.slide
+  min-width: 360px // Ширина одного слайда + gap
+  flex-shrink: 0 // Не сжимаем слайды
+  display: flex
+  justify-content: center
 
 .card
   display: flex
   align-items: flex-start
   flex-direction: column
+  width: 300px // Ширина карточки внутри слайда
 
 .image
   border-radius: 20px
   background: rgba(196, 196, 196, 1)
   margin-bottom: 20px
+  width: 100%
+  height: auto
 
 .name
+  color: rgba(20, 16, 36, 1)
+  font-family: Jost
   font-size: 24px
   font-weight: 600
   line-height: 160%
   text-align: left
+  margin: 0.5rem 0
 
 .role
   color: rgba(20, 16, 36, 0.7)
+  font-family: Jost
   font-size: 18px
   font-weight: 400
   line-height: 160%
   text-align: left
+  margin: 0.5rem 0
 
 .button
   background-color: inherit
   border: none
   color: rgba(213, 32, 39, 1)
+  font-family: Jost
   font-size: 18px
   font-weight: 400
   line-height: 160%
   text-align: left
+  cursor: pointer
+  text-decoration: underline
+
+  &:hover
+    text-decoration: none
+
+.sliderFooter
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-between

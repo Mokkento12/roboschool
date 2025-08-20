@@ -1,0 +1,14 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.000000" height="40.000000" fill="none" customFrame="#000000">
+	<defs>
+		<clipPath id="clipPath_1">
+			<rect width="40.000000" height="40.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Iconly/Bold/Arrow - Right Circle" width="40.000000" height="40.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+	<g id="Iconly/Bold/Arrow - Right Circle" customFrame="url(#clipPath_1)">
+		<rect id="Iconly/Bold/Arrow - Right Circle" width="40.000000" height="40.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+		<g id="Arrow - Right Circle">
+			<path id="Arrow - Right Circle" d="M36.6668 19.9999C36.6668 29.1999 29.1835 36.6666 20.0002 36.6666L19.5339 36.6602C10.5492 36.413 3.3335 29.044 3.3335 19.9999C3.3335 10.8166 10.8002 3.33325 20.0002 3.33325C29.1835 3.33325 36.6668 10.8166 36.6668 19.9999ZM16.7168 15.0999C16.2168 14.6166 16.2168 13.8333 16.7002 13.3333C16.9502 13.0833 17.2668 12.9666 17.6002 12.9666C17.9168 12.9666 18.2335 13.0833 18.4668 13.3333L24.2835 19.1166C24.5168 19.3499 24.6502 19.6666 24.6502 19.9999C24.6502 20.3333 24.5168 20.6499 24.2835 20.8833L18.4668 26.6666C17.9835 27.1666 17.2002 27.1666 16.7002 26.6666C16.2168 26.1833 16.2168 25.3833 16.7168 24.8999L21.6335 19.9999L16.7168 15.0999Z" fill="rgb(20,16,36)" fill-rule="evenodd" />
+		</g>
+	</g>
+</svg>

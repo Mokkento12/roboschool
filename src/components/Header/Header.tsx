@@ -3,7 +3,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/store";
 import MainNav from "@/features/MainNav/MainNav";
-import { toggleMenu } from "@/store/slice/menuSlice";
+import { toggleMenu } from "@/store/slices/menuSlice";
 import Logo from "../UI/Logo/Logo";
 import styles from "./Header.module.sass";
 import Contacts from "../UI/Contacts/Contacts";
