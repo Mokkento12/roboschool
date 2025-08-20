@@ -1,25 +1,32 @@
-// components/Trainers/Slider/Slider.tsx
-
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Slider.module.sass";
-import SliderNav from "../SliderNav/SliderNav";
 import SliderBtn from "../SliderBtn/SliderBtn";
-import { trainers } from "@/data/trainers"; // Убедись, что путь правильный
+import { trainers } from "@/data/trainers";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const slideWidth = 360;
+  const visibleSlides = 3;
+
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % trainers.length);
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + 1;
+
+      return newIndex >= trainers.length - visibleSlides + 1 ? 0 : newIndex;
+    });
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? trainers.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex - 1;
+
+      return newIndex < 0 ? trainers.length - visibleSlides : newIndex;
+    });
   };
 
   return (
@@ -28,7 +35,8 @@ const Slider = () => {
         <div
           className={styles.slideContainer}
           style={{
-            transform: `translateX(-${currentIndex * 360}px)`, // Сдвигаем контейнер
+            transform: `translateX(-${currentIndex * slideWidth}px)`,
+            transition: "transform 0.5s ease-in-out",
           }}
         >
           {trainers.map((trainer) => (
@@ -40,7 +48,7 @@ const Slider = () => {
                   width={360}
                   height={500}
                   className={styles.image}
-                  unoptimized // Если используешь внешние изображения
+                  unoptimized
                 />
                 <h3 className={styles.name}>{trainer.name}</h3>
                 <p className={styles.role}>{trainer.role}</p>
@@ -52,7 +60,10 @@ const Slider = () => {
       </div>
 
       <div className={styles.sliderFooter}>
-        <SliderNav />
+        <ProgressBar
+          currentIndex={currentIndex}
+          totalSlides={trainers.length - visibleSlides + 1}
+        />
         <SliderBtn onPrev={handlePrev} onNext={handleNext} />
       </div>
     </div>
