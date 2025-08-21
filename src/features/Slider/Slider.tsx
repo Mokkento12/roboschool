@@ -6,9 +6,13 @@ import styles from "./Slider.module.sass";
 import SliderBtn from "../SliderBtn/SliderBtn";
 import { trainers } from "@/data/trainers";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import Modal from "../Modal/Modal";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedTrainer, setSelectedTrainer] = useState<
+    null | (typeof trainers)[0]
+  >(null);
 
   const slideWidth = 360;
   const visibleSlides = 3;
@@ -27,6 +31,14 @@ const Slider = () => {
 
       return newIndex < 0 ? trainers.length - visibleSlides : newIndex;
     });
+  };
+
+  const openModal = (trainer: (typeof trainers)[0]) => {
+    setSelectedTrainer(trainer);
+  };
+
+  const closeModal = () => {
+    setSelectedTrainer(null);
   };
 
   return (
@@ -52,7 +64,12 @@ const Slider = () => {
                 />
                 <h3 className={styles.name}>{trainer.name}</h3>
                 <p className={styles.role}>{trainer.role}</p>
-                <button className={styles.button}>Подробнее</button>
+                <button
+                  className={styles.button}
+                  onClick={() => openModal(trainer)}
+                >
+                  Подробнее
+                </button>
               </div>
             </div>
           ))}
@@ -66,6 +83,9 @@ const Slider = () => {
         />
         <SliderBtn onPrev={handlePrev} onNext={handleNext} />
       </div>
+      {selectedTrainer && (
+        <Modal isOpen={true} onClose={closeModal} trainer={selectedTrainer} />
+      )}
     </div>
   );
 };
