@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./Modal.module.sass";
+import Tabs from "../Tabs/Tabs";
 
 interface ModalProps {
   isOpen: boolean;
@@ -53,6 +54,7 @@ const Modal = ({ isOpen, onClose, trainer }: ModalProps) => {
               </span>
             </div>
           </div>
+          <Tabs />
         </div>
       </div>
     </div>
