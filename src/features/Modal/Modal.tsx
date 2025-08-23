@@ -19,10 +19,10 @@ const Modal = ({ isOpen, onClose, trainer }: ModalProps) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <button className={styles.closeButton} onClick={onClose}>
-          Закрыть
-        </button>
         <div className={styles.card}>
+          <button className={styles.closeButton} onClick={onClose}>
+            Закрыть
+          </button>
           <Image
             src={trainer.image}
             alt={trainer.name}
@@ -31,9 +31,28 @@ const Modal = ({ isOpen, onClose, trainer }: ModalProps) => {
             className={styles.image}
             unoptimized
           />
-          <h3 className={styles.name}>{trainer.name}</h3>
-          <p className={styles.role}>{trainer.role}</p>
-          <p className={styles.bio}>{trainer.bio}</p>
+          <div className={styles.textContainer}>
+            <h3 className={styles.name}>{trainer.name}</h3>
+            <p className={styles.modalRole}>{trainer.role}</p>
+            <div className={styles.socialIcons}>
+              <span className={styles.icon}>
+                <Image
+                  src={"/image/fb.svg"}
+                  width={30}
+                  height={30}
+                  alt="Facebook"
+                />
+              </span>
+              <span className={styles.icon}>
+                <Image
+                  src={"/image/inst.svg"}
+                  width={30}
+                  height={30}
+                  alt="Instagram"
+                />
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
