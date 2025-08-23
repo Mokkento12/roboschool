@@ -2,11 +2,21 @@
   position: absolute
   left: 0
   top: 20rem
+  z-index: 100
 
 .tabList
+  position: relative
   display: flex
   align-items: center
   gap: 10rem
+
+.tabList:after
+  content: ''
+  position: absolute
+  bottom: 0
+  width: 860px
+  height: 0
+  border: 1px solid rgba(20, 16, 36, 0.11)
 
 .tab
   padding: 1rem 0
@@ -26,7 +36,6 @@
 
   &.active
     color: rgba(213, 32, 39, 1)
-    border-bottom: 2px solid rgba(213, 32, 39, 1)
 
 .tabContent
   position: relative
@@ -51,3 +60,6 @@
     font-weight: 400
     line-height: 160%
     text-align: left
+
+.content
+  padding: 20px 40px

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { education } from "@/data/education";
 import styles from "./Tabs.module.sass";
 
 const Tabs = () => {
@@ -25,6 +26,8 @@ const Tabs = () => {
           </button>
         ))}
       </div>
+
+      <div className={styles.content}>CONTENT</div>
     </div>
   );
 };
