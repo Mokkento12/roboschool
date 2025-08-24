@@ -7,6 +7,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   trainer: {
+    id: string;
     name: string;
     role: string;
     image: string;
@@ -54,7 +55,7 @@ const Modal = ({ isOpen, onClose, trainer }: ModalProps) => {
               </span>
             </div>
           </div>
-          <Tabs />
+          <Tabs trainerId={trainer.id} />
         </div>
       </div>
     </div>
