@@ -1,5 +1,3 @@
-// data/education.ts
-
 export const education = [
   {
     id: "1",
