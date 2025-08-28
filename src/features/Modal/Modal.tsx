@@ -18,14 +18,15 @@ interface ModalProps {
 
 const Modal = ({ isOpen, onClose, trainer }: ModalProps) => {
   useEffect(() => {
+    const root = document.documentElement;
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      root.classList.add("modal-open");
     } else {
-      document.body.style.overflow = "auto";
+      root.classList.remove("modal-open");
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      root.classList.remove("modal-open");
     };
   }, [isOpen]);
 

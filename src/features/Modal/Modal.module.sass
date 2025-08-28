@@ -10,16 +10,15 @@
   align-items: center
   justify-content: center
   z-index: 1000
-  // overflow: hidden // ✅ Запрещаем прокрутку подложки
 
 .modalContent
-  overflow: hidden // ✅ Скрываем прокрутку .modalContent
   background: white
   padding: 2rem
   border-radius: 10px
   width: 940px
   height: 768px
   position: relative
+  overflow-y: auto
 
 .closeButton
   position: absolute

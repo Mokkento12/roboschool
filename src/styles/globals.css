@@ -16,3 +16,9 @@ p {
 * {
   box-sizing: border-box;
 }
+
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  height: 100%;
+}
