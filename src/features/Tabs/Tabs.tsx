@@ -39,33 +39,34 @@ const Tabs: React.FC<TabsProps> = ({ trainerId }) => {
           </button>
         ))}
       </div>
+      <div className={styles.scrollArea}>
+        <div className={styles.tabContent}>
+          {activeTab === "education" && (
+            <div className={styles.content}>
+              {currentEducation.map((item) => (
+                <div key={item.id} className={styles.educationItem}>
+                  <h3 className={styles.title}>{item.title}</h3>
+                  <p className={styles.period}>{item.period}</p>
+                  {item.faculty && <p>{item.faculty}</p>}
+                  {item.specialty && <p>{item.specialty}</p>}
+                  {item.form && <p>{item.form}</p>}
+                </div>
+              ))}
+            </div>
+          )}
 
-      <div className={styles.tabContent}>
-        {activeTab === "education" && (
-          <div className={styles.content}>
-            {currentEducation.map((item) => (
-              <div key={item.id} className={styles.educationItem}>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.period}>{item.period}</p>
-                {item.faculty && <p>{item.faculty}</p>}
-                {item.specialty && <p>{item.specialty}</p>}
-                {item.form && <p>{item.form}</p>}
-              </div>
-            ))}
-          </div>
-        )}
+          {activeTab === "experience" && (
+            <div className={styles.content}>
+              <p>Опыт работы будет здесь</p>
+            </div>
+          )}
 
-        {activeTab === "experience" && (
-          <div className={styles.content}>
-            <p>Опыт работы будет здесь</p>
-          </div>
-        )}
-
-        {activeTab === "awards" && (
-          <div className={styles.content}>
-            <p>Награды будут здесь</p>
-          </div>
-        )}
+          {activeTab === "awards" && (
+            <div className={styles.content}>
+              <p>Награды будут здесь</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
