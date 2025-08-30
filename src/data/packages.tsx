@@ -4,8 +4,10 @@ export const packages = [
     title: "PRO",
     price: "20.000 ₽",
     description: "УМК по робототехнике и программированию",
-    bgColor: "#000",
-    textColor: "#fff",
+    bgColor: "#fff", // ✅ Обычный фон
+    textColor: "#000", // ✅ Обычный цвет текста
+    selectedBgColor: "#000", // ✅ Выбранный фон
+    selectedTextColor: "#fff", // ✅ Выбранный цвет текста
     buttonColor: "#e94040",
   },
   {
@@ -15,6 +17,8 @@ export const packages = [
     description: "УМК по робототехнике",
     bgColor: "#fff",
     textColor: "#000",
+    selectedBgColor: "#000",
+    selectedTextColor: "#fff",
     buttonColor: "#e94040",
   },
   {
@@ -24,6 +28,8 @@ export const packages = [
     description: "УМК по программированию",
     bgColor: "#fff",
     textColor: "#000",
+    selectedBgColor: "#000",
+    selectedTextColor: "#fff",
     buttonColor: "#e94040",
   },
 ];

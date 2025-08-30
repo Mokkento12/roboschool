@@ -10,6 +10,8 @@ interface PackageCardProps {
     description: string;
     bgColor: string;
     textColor: string;
+    selectedBgColor: string;
+    selectedTextColor: string;
     buttonColor: string;
   };
   isSelected: boolean;
@@ -21,8 +23,12 @@ const PackageCard = ({ pkg, isSelected, onClick }: PackageCardProps) => {
     <div
       className={`${styles.card} ${isSelected ? styles.selected : ""}`}
       style={{
-        backgroundColor: pkg.bgColor,
-        color: pkg.textColor,
+        backgroundColor: isSelected ? pkg.selectedBgColor : pkg.bgColor,
+        color: isSelected ? pkg.selectedTextColor : pkg.textColor,
+        width: isSelected ? "360px" : "360px",
+        height: isSelected ? "500px" : "460px",
+        transition:
+          "height 0.3s ease, background-color 0.3s ease, color 0.3s ease",
       }}
       onClick={onClick}
     >
