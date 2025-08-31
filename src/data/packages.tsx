@@ -1,7 +1,7 @@
 export const packages = [
   {
     id: "pro",
-    title: "PRO",
+    title: "– PRO –",
     price: "20.000 ₽",
     description: "УМК по робототехнике и программированию",
     bgColor: "#fff", // ✅ Обычный фон
@@ -12,7 +12,7 @@ export const packages = [
   },
   {
     id: "robo",
-    title: "ROBO",
+    title: "– ROBO –",
     price: "15.000 ₽",
     description: "УМК по робототехнике",
     bgColor: "#fff",
@@ -23,7 +23,7 @@ export const packages = [
   },
   {
     id: "prog",
-    title: "PROG",
+    title: "– PROG –",
     price: "10.000 ₽",
     description: "УМК по программированию",
     bgColor: "#fff",
