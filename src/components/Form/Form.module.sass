@@ -1,7 +1,70 @@
-.form
+.formWrapper
+  position: relative
   display: flex
   align-items: center
   justify-content: center
   padding: 5.4rem 0
   background: rgba(213, 32, 39, 1)
   color: rgba(255, 255, 255, 1)
+
+.form:after
+  content: ""
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 120px
+  background-image: url("/image/percent.png")
+  background-size: cover
+  background-repeat: repeat-x
+
+.container
+  display: flex
+  align-items: flex-start
+  gap: 4rem
+
+.desc
+  display: flex
+  flex-direction: column
+  margin-top: 20px
+  gap: 20px
+
+.title
+  font-size: 36px
+  font-weight: 600
+  line-height: 130%
+  text-align: left
+
+.text
+  font-size: 20px
+  font-weight: 400
+  line-height: 130%
+  text-align: left
+
+.form
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  gap: 10px
+
+.input
+  width: 500px
+  height: 64px
+  border-radius: 5px
+  background: rgba(246, 246, 246, 1)
+  border: none
+  padding: 19px 20px
+
+.submitBtn
+  color: rgba(255, 255, 255, 1)
+  font-size: 18px
+  font-weight: 400
+  line-height: 26px
+  text-align: center
+  width: 500px
+  height: 64px
+  border-radius: 5px
+  background: rgba(20, 16, 36, 1)
+  border: none
+  z-index: 1
