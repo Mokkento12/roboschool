@@ -15,7 +15,7 @@ const Slider = () => {
   >(null);
 
   const slideWidth = 360;
-  const visibleSlides = 3;
+  const visibleSlides = 1;
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => {
