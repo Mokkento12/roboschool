@@ -1,3 +1,4 @@
+
 .tel
   color: rgb(255, 255, 255)
   font-family: "Jost"
@@ -10,7 +11,7 @@
 .tel:hover
   text-decoration: underline
 
-// Добавляем скрытие на мобильных устройствах
+// Скрываем телефон в шапке на мобильных
 @media (max-width: 768px)
-  .tel
+  .tel:not(.footerTel) // ✅ Скрываем только те .tel, у которых нет .footerTel
     display: none

@@ -68,3 +68,29 @@
   background: rgba(20, 16, 36, 1)
   border: none
   z-index: 1
+
+@media (max-width: 768px)
+  .formWrapper
+    padding: 2.7rem 0
+
+  .container
+    flex-direction: column
+    gap: 2rem
+
+  .title
+    font-size: 30px
+    text-align: center
+
+  .text
+    width: 250px
+    font-size: 16px
+    text-align: center
+
+  .input
+    max-width: 300px
+
+  .submitBtn
+    width: 100% // ✅ Занимаем всю ширину
+    max-width: 300px // ✅ Ограничиваем ширину
+    height: 50px // ✅ Уменьшаем высоту
+    font-size: 16px // ✅ Уменьшаем размер шрифта
