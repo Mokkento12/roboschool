@@ -1,5 +1,4 @@
-
-.coachesPage
+.coachPage
   padding: 2rem
   background: #f9f9f9
 
@@ -12,9 +11,9 @@
   text-align: center
   margin-bottom: 2rem
 
-.trainersGrid
+.trainerGrid
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
   gap: 2rem
   justify-items: center
 
@@ -26,31 +25,31 @@
   padding: 1rem
   text-align: center
   transition: transform 0.3s ease
+  max-width: 280px
 
   &:hover
     transform: scale(1.05)
 
 .trainerImage
-  border-radius: 20px
+  border-radius: 10px
   background: rgba(196, 196, 196, 1)
   margin-bottom: 1rem
   width: 100%
-  height: auto
+  height: 300px
+  object-fit: cover
 
 .trainerName
   color: rgba(20, 16, 36, 1)
   font-family: Jost
-  font-size: 24px
+  font-size: 20px
   font-weight: 600
-  line-height: 160%
-  text-align: center
+  line-height: 140%
   margin: 0.5rem 0
 
 .trainerRole
   color: rgba(20, 16, 36, 0.7)
   font-family: Jost
-  font-size: 18px
+  font-size: 16px
   font-weight: 400
-  line-height: 160%
-  text-align: center
+  line-height: 140%
   margin-bottom: 1rem
