@@ -9,15 +9,25 @@ import {
   HttpLink,
 } from "@apollo/client";
 
-const client = new ApolloClient({
+// Создаем разных клиентов
+const rickAndMortyClient = new ApolloClient({
   link: new HttpLink({ uri: "https://rickandmortyapi.com/graphql" }),
   cache: new InMemoryCache(),
 });
 
+const spaceXClient = new ApolloClient({
+  link: new HttpLink({ uri: "https://spacex-production.up.railway.app/" }),
+  cache: new InMemoryCache(),
+});
+
+// Используем одного из них как основного
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
-      <ApolloProvider client={client}>{children}</ApolloProvider>
+      <ApolloProvider client={rickAndMortyClient}>{children}</ApolloProvider>
     </Provider>
   );
 }
+
+// Экспортируем обоих для использования в компонентах
+export { rickAndMortyClient, spaceXClient };
