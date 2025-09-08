@@ -3,7 +3,6 @@
 import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
 import styles from "./Coaches.module.sass";
-import Header from "@/components/Header/Header";
 
 const GET_CHARACTERS = gql`
   query GetCharacters {
