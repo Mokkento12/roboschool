@@ -20,7 +20,7 @@ const spaceXClient = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// Используем одного из них как основного
+// Используем Rick and Morty как основного клиента для всего приложения
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>

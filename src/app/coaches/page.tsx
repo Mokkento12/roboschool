@@ -34,27 +34,24 @@ export default function CoachesPage() {
   const characters: Character[] = data.characters.results;
 
   return (
-    <>
-      <Header />
-      <div className={styles.coachPage}>
-        <h1 className={styles.title}>Наши тренеры</h1>
-        <div className={styles.trainerGrid}>
-          {characters.map((char) => (
-            <div key={char.id} className={styles.trainerCard}>
-              <Image
-                src={char.image}
-                alt={char.name}
-                width={250}
-                height={300}
-                className={styles.trainerImage}
-                unoptimized
-              />
-              <h2 className={styles.trainerName}>{char.name}</h2>
-              <p className={styles.trainerRole}>{char.species}</p>
-            </div>
-          ))}
-        </div>
+    <div className={styles.coachPage}>
+      <h1 className={styles.title}>Наши тренеры</h1>
+      <div className={styles.trainerGrid}>
+        {characters.map((char) => (
+          <div key={char.id} className={styles.trainerCard}>
+            <Image
+              src={char.image}
+              alt={char.name}
+              width={250}
+              height={300}
+              className={styles.trainerImage}
+              unoptimized
+            />
+            <h2 className={styles.trainerName}>{char.name}</h2>
+            <p className={styles.trainerRole}>{char.species}</p>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

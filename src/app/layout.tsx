@@ -1,7 +1,9 @@
 import "../styles/globals.css";
+
 import { Jost } from "next/font/google";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
+import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 const jost = Jost({
@@ -23,8 +25,11 @@ export default function RootLayout({
   return (
     <html lang="ru" className={jost.variable}>
       <body className={jost.className}>
-        <Providers>{children}</Providers>
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
