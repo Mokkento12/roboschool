@@ -2,7 +2,9 @@
 
 import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
+import { addItem } from "@/store/slices/cartSlice";
 import styles from "./Coaches.module.sass";
+import { useDispatch } from "react-redux";
 
 const GET_CHARACTERS = gql`
   query GetCharacters {
@@ -32,6 +34,19 @@ export default function CoachesPage() {
 
   const characters: Character[] = data.characters.results;
 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (char: Character) => {
+    dispatch(
+      addItem({
+        id: char.id,
+        name: char.name,
+        image: char.image,
+        species: char.species,
+      })
+    );
+  };
+
   return (
     <div className={styles.coachPage}>
       <h1 className={styles.title}>Наши тренеры</h1>
@@ -48,6 +63,7 @@ export default function CoachesPage() {
             />
             <h2 className={styles.trainerName}>{char.name}</h2>
             <p className={styles.trainerRole}>{char.species}</p>
+            <button onClick={() => handleAddToCart(char)}>В корзину</button>
           </div>
         ))}
       </div>

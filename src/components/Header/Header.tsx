@@ -10,6 +10,8 @@ import Contacts from "../UI/Contacts/Contacts";
 import Burger from "../Burger/Burger";
 import PhoneIcon from "../UI/PhoneIcon/PhoneIcon";
 
+import { UseSelector } from "react-redux";
+
 const Header = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
@@ -17,6 +19,10 @@ const Header = () => {
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
   };
+
+  const cartItemsCount = useSelector(
+    (state: RootState) => state.cart.items.length
+  );
 
   return (
     <header className={styles.header}>
@@ -26,6 +32,7 @@ const Header = () => {
         <div className={styles.desktopNav}>
           <MainNav />
         </div>
+        <div className={styles.cartIcon}>🛒 ({cartItemsCount})</div>
         <Contacts />
         <PhoneIcon />
         <Burger onClick={handleToggleMenu} />
