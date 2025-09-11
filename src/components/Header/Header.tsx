@@ -10,7 +10,7 @@ import Contacts from "../UI/Contacts/Contacts";
 import Burger from "../Burger/Burger";
 import PhoneIcon from "../UI/PhoneIcon/PhoneIcon";
 
-import { UseSelector } from "react-redux";
+import Link from "next/link";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,9 @@ const Header = () => {
         <div className={styles.desktopNav}>
           <MainNav />
         </div>
-        <div className={styles.cartIcon}>🛒 ({cartItemsCount})</div>
+        <div className={styles.cartIcon}>
+          <Link href="/cart">🛒 Корзина ({cartItemsCount})</Link>
+        </div>
         <Contacts />
         <PhoneIcon />
         <Burger onClick={handleToggleMenu} />
