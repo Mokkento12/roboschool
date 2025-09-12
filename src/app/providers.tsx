@@ -1,7 +1,8 @@
 "use client";
 
 import { Provider } from "react-redux";
-import { store } from "@/store/store";
+import { store, persistor } from "@/store/store";
+import { PersistGate } from "redux-persist/integration/react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -24,7 +25,9 @@ const spaceXClient = new ApolloClient({
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
-      <ApolloProvider client={rickAndMortyClient}>{children}</ApolloProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ApolloProvider client={rickAndMortyClient}>{children}</ApolloProvider>
+      </PersistGate>
     </Provider>
   );
 }
