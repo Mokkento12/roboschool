@@ -10,7 +10,6 @@ import {
   HttpLink,
 } from "@apollo/client";
 
-// Создаем разных клиентов
 const rickAndMortyClient = new ApolloClient({
   link: new HttpLink({ uri: "https://rickandmortyapi.com/graphql" }),
   cache: new InMemoryCache(),
@@ -21,7 +20,6 @@ const spaceXClient = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// Используем Rick and Morty как основного клиента для всего приложения
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
@@ -32,5 +30,4 @@ export function Providers({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Экспортируем обоих для использования в компонентах
 export { rickAndMortyClient, spaceXClient };

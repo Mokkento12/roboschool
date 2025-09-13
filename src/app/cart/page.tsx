@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "@/store/store";
 import { removeItem, clearCart } from "@/store/slices/cartSlice";
@@ -9,6 +9,11 @@ import styles from "./Cart.module.sass";
 export default function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   const handleRemove = (id: string) => {
     dispatch(removeItem(id));
@@ -17,6 +22,10 @@ export default function CartPage() {
   const handleClear = () => {
     dispatch(clearCart());
   };
+
+  if (!hydrated) {
+    return <p>Загрузка корзины...</p>;
+  }
 
   if (cartItems.length === 0) {
     return (
